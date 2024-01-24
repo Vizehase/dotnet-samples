@@ -23,11 +23,11 @@ The out-of-process part seems to come for free anyway: When I register (``regsvr
 
 We take the [Microsoft out-of-proc example](https://learn.microsoft.com/en-us/samples/dotnet/samples/out-of-process-com-server/) as base with the following changes:
 
-1. Make the DllServer project registry-free by adding ``<EnableRegFreeCom>True</EnableRegFreeCom>`` next to the EnableComHosting tag.
+1. Make the DllServer project registry-free by adding ``<EnableRegFreeCom>True</EnableRegFreeCom>`` next to the EnableComHosting tag. (Already done in the repo branch.)
 1. Open the Solution with Visual Studio (at the time of writing VS2022).
-1. Open the Configuration Manager, create a new Solution Platform "x86" on base of the existing, leave all the .NET projects with platform "Any CPU", but change the C++ projects NativeClient and Server.Contract to Win32.
+1. Open the Configuration Manager, create a new Solution Platform "x86" on base of the existing, leave all the .NET projects with platform "Any CPU", but change the C++ projects NativeClient and Server.Contract to Win32.  (Already done in the repo branch.)
 1. Compile the DllServer project and copy its output to the NativeClient's output directory (``..\Debug\`` relative to the project directory).
-1. Create a new file ``NativeClient.manifest`` in the NativeClient project directory with the following contents (with or without the ``assemblyIdentity`` for NativeClient does not seem to make a difference although the tag is officially required in a manifest):
+1. Create a new file ``NativeClient.manifest`` in the NativeClient project directory with the following contents (with or without the ``assemblyIdentity`` for NativeClient does not seem to make a difference although the tag is officially required in a manifest)  (Already done in the repo branch.):
 
     ``` xml
     <?xml version="1.0" encoding="utf-8"?>
